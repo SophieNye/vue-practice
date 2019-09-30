@@ -21,8 +21,8 @@
 
         </ul>
 
-        <input type="text">
-        <button>Add Name</button>
+        <input id="nameInput" type="text">
+        <button id="addName">Add Name</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -30,12 +30,17 @@
     <script>
 
 
-        new Vue({
+        var app = new Vue({
             el: '#root',
             data: {
                 message: 'Hello World',
-                name: ['Sophie', 'Dillon', 'Will']
+                names: ['Sophie', 'Dillon', 'Will']
             }
+        })
+
+        document.querySelector("#addName").addEventListener('click', () => {
+            let name = document.querySelector("#nameInput").value
+            app.names.push(name)
         })
 
     </script>
