@@ -35,13 +35,18 @@
             data: {
                 message: 'Hello World',
                 names: ['Sophie', 'Dillon', 'Will']
+            },
+
+            mounted() {
+
+                document.querySelector("#addName").addEventListener('click', () => {
+                    let name = document.querySelector("#nameInput");
+                    app.names.push(name.value);
+                    name.value = '';
+                })
             }
         })
 
-        document.querySelector("#addName").addEventListener('click', () => {
-            let name = document.querySelector("#nameInput").value
-            app.names.push(name)
-        })
 
     </script>
 </body>
